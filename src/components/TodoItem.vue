@@ -7,7 +7,7 @@
     <img
       @click.stop="props.onRemove(key)"
       class="cross"
-      src="/icon-cross.svg"
+      src="../assets/images/icon-cross.svg"
       alt="Delete Todo"
     />
     </div>

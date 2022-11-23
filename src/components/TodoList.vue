@@ -24,14 +24,14 @@
     <div class="detached-menu | card row">
     <TodoFilter
       v-for="(i, index) in filters"
-      :key="index"
+      :key="10 + index"
       :title="i"
       v-model="filter"
     /> 
     </div>
   </template>
   <script setup>
-  import { ref, watch } from "vue";
+  import { ref } from "vue";
   import { computed } from "@vue/reactivity";
   import TodoItem from "./TodoItem.vue";
   import TodoFilter from "./TodoFilter.vue";
