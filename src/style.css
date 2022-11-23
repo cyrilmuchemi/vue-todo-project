@@ -116,7 +116,7 @@ body {
         background: var(--mobile-bg) var(--background-color);
         background-repeat: no-repeat;
         background-size: 100% auto;
-        font-size: 0.875rem;
+        font-size: 0.825rem;
     }
 }
 
@@ -182,6 +182,12 @@ h1 {
     margin: 3rem 0;
     font-size: 0.75rem;
     color: var(--subtitle-color);
+}
+
+@media (max-width: 50rem) {
+    .footer {
+      font-size: 0.625rem;
+    }
 }
 
 .bold {
@@ -272,6 +278,12 @@ h1 {
 
 .todo-list > .todo-item {
     border-bottom: 1.5px solid var(--checkbox-color);
+}
+
+@media (max-width: 50rem) {
+    .todo-list > .todo-item {
+      border-bottom: 1px solid var(--checkbox-color);
+    }
 }
 
 .todo-list > .todo-item:last-child {
