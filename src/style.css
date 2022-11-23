@@ -58,9 +58,10 @@ input:focus {
     --dark-card-color: hsl(235, 24%, 19%);
     --dark-text-color: hsl(234, 39%, 85%);
     --dark-subtitle-color-hover: hsl(236, 33%, 92%);
-    --dark--subtitle-color: hsl(234, 11%, 52%);
+    --dark-subtitle-color: hsl(234, 11%, 52%);
     --dark-faded-color: hsl(233, 14%, 35%);
     --dark-checkbox-color: hsl(237, 14%, 26%);
+    
   
     --background-color: var(--light-background-color);
     --checkbox-color: var(--light-faded-color);
@@ -68,18 +69,38 @@ input:focus {
     --subtitle-color: var(--light-subtitle-color);
     --subtitle-color-hover: var(--light-subtitle-color);
     --text-color: var(--light-text-color);
-    --card-color: var(--light-card-color);
-  
+    --card-color: var(--light-card-color); 
     --light-desktop-bg: url("../src/assets/images/bg-desktop-light.jpg");
     --light-mobile-bg: url("../src/assets/images/BG-MOBILE-LIGHT.JPG");
-  
     --dark-desktop-bg: url("../src/assets/images/bg-desktop-dark.jpg");
     --dark-mobile-bg: url("../src/assets/images/BG-MOBILE-DARK.JPG");
-  
     --desktop-bg: var(--light-desktop-bg);
     --mobile-bg: var(--light-mobile-bg);
-  
-    font-weight: var(--regular-weight);
+
+}
+
+.light {
+    --background-color: var(--light-background-color);
+    --checkbox-color: var(--light-faded-color);
+    --faded-color: var(--light-subtitle-color);
+    --subtitle-color: var(--light-subtitle-color);
+    --subtitle-color-hover: var(--light-text-color);
+    --text-color: var(--light-text-color);
+    --card-color: var(--light-card-color);
+    --desktop-bg: var(--light-desktop-bg);
+    --mobile-bg: var(--light-mobile-bg);
+}
+
+.dark {
+    --background-color: var(--dark-background-color);
+    --checkbox-color: var(--dark-checkbox-color);
+    --faded-color: var(--dark-faded-color);
+    --subtitle-color: var(--dark-subtitle-color);
+    --subtitle-color-hover: var(--dark-subtitle-color-hover);
+    --text-color: var(--dark-text-color);
+    --card-color: var(--dark-card-color);
+    --desktop-bg: var(--dark-desktop-bg);
+    --mobile-bg: var(--dark-mobile-bg);
 }
 
 body {
@@ -104,9 +125,12 @@ input::placeholder {
 }
 
 #app {
+    position: relative;
     width: 100%;
     max-width: 40rem;
+    min-height: calc(100vh - 7rem);
     margin: 0 auto;
+    padding-bottom: 7rem;
 }
 
 #app > * {
@@ -150,8 +174,12 @@ h1 {
 }
 
 .footer {
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
     text-align: center;
-    margin: 3rem auto;
+    margin: 3rem 0;
     font-size: 0.75rem;
     color: var(--subtitle-color);
 }
@@ -165,6 +193,11 @@ h1 {
 .topbar {
     padding: 4rem 0 1rem;
 }
+
+.topbar img {
+    cursor: pointer;
+}
+  
   
 .todo-input {
     margin: 1.5rem 0;
@@ -172,7 +205,7 @@ h1 {
 
 @media (max-width: 50rem) {
     .topbar {
-        padding: 1.75rem 0 0.5rem;
+        padding: 1.75rem 0.5rem 0.5rem;
     }
 
     .todo-input {
@@ -186,6 +219,44 @@ h1 {
     align-items: center;
     padding: 0.75rem 1.5rem;
 }
+
+.todo-item .cross {
+    opacity: 0;
+}
+
+@media (max-width: 50rem) {
+    .todo-item {
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .todo-item .cross {
+        opacity: 1;
+        width: 15px;
+        height: 15px;
+    }
+}
+
+.todo-item:hover {
+    cursor: pointer;
+}
+
+.todo-item:hover .cross {
+    opacity: 1;
+}
+
+.todo-item:hover .checkbox {
+    border: solid 2px transparent;
+    background-image: linear-gradient(var(--card-color), var(--card-color)),
+      var(--gradient);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.todo-item:hover .checked {
+    background-image: var(--gradient), var(--gradient);
+}
+  
 
 .todo-item p {
     flex-grow: 1;
@@ -210,6 +281,7 @@ h1 {
 .input {
     padding: 0.5rem 0;
     flex-grow: 1;
+    background-color: transparent;
 }
 
 .checkbox {
@@ -224,12 +296,20 @@ h1 {
     width: 0.725rem;
     height: 0.725rem;
     padding: 0.325rem;
+    opacity: 0;
 }
 
 .checked {
     flex: none;
-    background: var(--gradient);
+    background-image: var(--gradient), var(--gradient);
+    border: solid 2px transparent;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
     /* border: 2px solid var(--gradient); */
+}
+
+.checked img {
+    opacity: 1;
 }
 
 .menu {
@@ -238,9 +318,33 @@ h1 {
     font-size: 1rem;
 }
 
+.detached-menu {
+    display: none;
+}
+
 @media (max-width: 50rem) {
     .menu {
+      padding: 1rem 1rem 0.75rem;
       font-size: 0.75rem;
     }
+
+    .detached-menu {
+        display: flex;
+        margin-top: 1rem;
+        padding: 1rem 1rem 0.75rem;
+        font-size: 0.75rem;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+.menu p:hover,
+.detached-menu p:hover {
+  cursor: pointer;
+  color: var(--subtitle-color-hover);
+}
+
+.menu-active {
+    color: var(--primary);
 }
 

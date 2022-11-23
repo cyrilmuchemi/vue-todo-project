@@ -4,6 +4,7 @@
         <img src="../assets/images/icon-check.svg" alt="Checked Icon" />
       </div>
       <p :class="{ crossed: isComplete }">{{ props.title }}</p>
+      <img class="cross" src="/icon-cross.svg" alt="Delete Todo" />
     </div>
   </template>
   

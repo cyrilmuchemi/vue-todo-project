@@ -7,7 +7,7 @@
       <TodoItem title="My Todo item" :completed="true" />
       <TodoItem title="My Todo item" />
       <div class="menu | row">
-        <p>5 items left</p>
+        <h6>5 items left</h6>
         <div class="inner-row bold">
           <p>All</p>
           <p>Active</p>
@@ -17,6 +17,11 @@
         <p>Clear Completed</p>
       </div>
     </div>
+    <div class="detached-menu | card row">
+    <p>All</p>
+    <p>Active</p>
+    <p>Completed</p>
+  </div>
   </template>
   <script>
   import TodoItem from "./TodoItem.vue";
