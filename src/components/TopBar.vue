@@ -3,7 +3,7 @@
       <h1>TODO</h1>
       <img
       @click="toggleTheme"
-      :src="isDark ? '../src/assets/images/icon-sun.svg' : '../src/assets/images/ICON-MOON.SVG'"
+      :src="isDark ? '../src/assets/images/ICON-SUN.SVG' : '../src/assets/images/ICON-MOON.SVG'"
       alt="Toggle Theme"
       />
     </div>
