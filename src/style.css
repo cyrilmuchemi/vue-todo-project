@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: inherit;
+    text-decoration: none;
+    font: inherit;
+    color: inherit;
+}
+
+article,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+body * {
+    max-width: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+input:focus {
+    outline: none;
+}
+  
+:root {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+  
+    --primary: hsl(220, 98%, 61%);
+    --gradient: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  
+    --regular-weight: 400;
+    --bold-weight: 700;
+  
+    --light-background-color: hsl(0, 0%, 98%);
+    --light-checkbox-color: hsl(236, 33%, 92%);
+    --light-faded-color: hsl(233, 11%, 84%);
+    --light-subtitle-color: hsl(236, 9%, 61%);
+    --light-text-color: hsl(235, 19%, 35%);
+    --light-card-color: hsl(0, 0%, 100%);
+  
+    --dark-background-color: hsl(235, 21%, 11%);
+    --dark-card-color: hsl(235, 24%, 19%);
+    --dark-text-color: hsl(234, 39%, 85%);
+    --dark-subtitle-color-hover: hsl(236, 33%, 92%);
+    --dark--subtitle-color: hsl(234, 11%, 52%);
+    --dark-faded-color: hsl(233, 14%, 35%);
+    --dark-checkbox-color: hsl(237, 14%, 26%);
+  
+    --background-color: var(--light-background-color);
+    --checkbox-color: var(--light-faded-color);
+    --faded-color: var(--light-subtitle-color);
+    --subtitle-color: var(--light-subtitle-color);
+    --subtitle-color-hover: var(--light-subtitle-color);
+    --text-color: var(--light-text-color);
+    --card-color: var(--light-card-color);
+  
+    --light-desktop-bg: url("../src/assets/images/bg-desktop-light.jpg");
+    --light-mobile-bg: url("../src/assets/images/BG-MOBILE-LIGHT.JPG");
+  
+    --dark-desktop-bg: url("../src/assets/images/bg-desktop-dark.jpg");
+    --dark-mobile-bg: url("../src/assets/images/BG-MOBILE-DARK.JPG");
+  
+    --desktop-bg: var(--light-desktop-bg);
+    --mobile-bg: var(--light-mobile-bg);
+  
+    font-weight: var(--regular-weight);
+}
+
+body {
+    background: var(--desktop-bg) var(--background-color);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    font-size: 1.125rem;
+    color: var(--text-color);
+}
+
+@media (max-width: 50rem) {
+    body {
+        background: var(--mobile-bg) var(--background-color);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        font-size: 0.875rem;
+    }
+}
+
+input::placeholder {
+    color: var(--subtitle-color);
+}
+
+#app {
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+#app > * {
+    margin-inline: 1rem;
+}
+
+/* Utility classes */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inner-row {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 1.5rem;
+}
+
+@media (max-width: 50rem) {
+    .inner-row {
+        display: none;
+    }
+}
+
+.card {
+    border-radius: 0.5rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background: var(--card-color);
+}
+
+/* Typography */
+
+h1 {
+  font-weight: var(--bold-weight);
+  color: white;
+  padding-top: 0.5rem;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  letter-spacing: 1rem;
+}
+
+.footer {
+    text-align: center;
+    margin: 3rem auto;
+    font-size: 0.75rem;
+    color: var(--subtitle-color);
+}
+
+.bold {
+    font-weight: var(--bold-weight);
+}
+
+/* Components */
+
+.topbar {
+    padding: 4rem 0 1rem;
+}
+  
+.todo-input {
+    margin: 1.5rem 0;
+}
+
+@media (max-width: 50rem) {
+    .topbar {
+        padding: 1.75rem 0 0.5rem;
+    }
+
+    .todo-input {
+        margin: 1rem 0;
+    }
+}
+
+.todo-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+}
+
+.todo-item p {
+    flex-grow: 1;
+    line-height: 1.25;
+    padding: 0.5rem 0;
+}
+
+
+.crossed {
+    text-decoration: line-through;
+    color: var(--faded-color);
+}
+
+.todo-list > .todo-item {
+    border-bottom: 1.5px solid var(--checkbox-color);
+}
+
+.todo-list > .todo-item:last-child {
+    border: none;
+}
+
+.input {
+    padding: 0.5rem 0;
+    flex-grow: 1;
+}
+
+.checkbox {
+    flex: none;
+    width: 1.375rem;
+    height: 1.375rem;
+    border: 2px solid var(--checkbox-color);
+    border-radius: 100vmax;
+}
+
+.checkbox img {
+    width: 0.725rem;
+    height: 0.725rem;
+    padding: 0.325rem;
+}
+
+.checked {
+    flex: none;
+    background: var(--gradient);
+    /* border: 2px solid var(--gradient); */
+}
+
+.menu {
+    padding: 1.5rem 1.5rem 1rem;
+    color: var(--subtitle-color);
+    font-size: 1rem;
+}
+
+@media (max-width: 50rem) {
+    .menu {
+      font-size: 0.75rem;
+    }
+}
+
