@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mounted App renders correctly 1`] = `
+<div
+  data-v-app=""
+>
+  
+  <div
+    class="topbar | row"
+  >
+    <h1>
+      TODO
+    </h1>
+    <img
+      alt="Toggle Theme"
+      src="../src/assets/images/ICON-MOON.SVG"
+    />
+  </div>
+  <div
+    class="todo-input | todo-item card"
+  >
+    <div
+      class="checkbox"
+    />
+    <input
+      class="input"
+      placeholder="Create a new todo.."
+      type="text"
+    />
+  </div>
+  
+  <div
+    class="todo-list | card"
+  >
+    
+    
+    <div
+      class="menu | row"
+    >
+      <h6>
+        0 items left
+      </h6>
+      <div
+        class="inner-row bold"
+      >
+        
+        <p
+          class="menu-active"
+        >
+          All
+        </p>
+        <p
+          class=""
+        >
+          Active
+        </p>
+        <p
+          class=""
+        >
+          Completed
+        </p>
+        
+      </div>
+      <p>
+        Clear Completed
+      </p>
+    </div>
+  </div>
+  <div
+    class="detached-menu | card row"
+  >
+    
+    <p
+      class="menu-active"
+    >
+      All
+    </p>
+    <p
+      class=""
+    >
+      Active
+    </p>
+    <p
+      class=""
+    >
+      Completed
+    </p>
+    
+  </div>
+  
+  <p
+    class="footer"
+  >
+    KaziQuest Interview by Cyril Muchemi.
+  </p>
+  
+</div>
+`;

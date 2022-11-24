@@ -12,7 +12,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://todo-app-raelcode.netlify.app/)
+[Live Demo Link]()
 
 
 ## Getting Started
@@ -47,7 +47,11 @@ git clone https://github.com/cyrilmuchemi/vue-todo-project.
    ```sh
    npm run dev
 
-3. Open [http://localhost:3000](http://localhost:5173) to view it in the browser.
+3. Run tests with Jest
+   ```sh
+   npm run test:unit
+
+4. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
 
 ## 🚀 Building and Running for Production

@@ -1,14 +1,18 @@
 <template>
-    <div class="topbar | row">
-      <h1>TODO</h1>
-      <img
+  <div class="topbar | row">
+    <h1>TODO</h1>
+    <img
       @click="toggleTheme"
-      :src="isDark ? '../src/assets/images/ICON-SUN.SVG' : '../src/assets/images/ICON-MOON.SVG'"
+      :src="
+        isDark
+          ? '../src/assets/images/ICON-SUN.SVG'
+          : '../src/assets/images/ICON-MOON.SVG'
+      "
       alt="Toggle Theme"
-      />
-    </div>
-  </template>
-  
+    />
+  </div>
+</template>
+
 <script setup>
 import { ref } from "vue";
 let body = document.querySelector("body");
@@ -21,4 +25,4 @@ function toggleTheme() {
   localStorage.setItem("theme", isDark.value ? "dark" : "light");
 }
 </script>
-  <style lang=""></style>
+<style lang=""></style>
