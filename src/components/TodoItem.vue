@@ -1,13 +1,13 @@
 <template>
   <div @click="props.onComplete(key)" class="todo-item">
     <div class="checkbox" :class="{ checked: isComplete() }">
-        <img src="../assets/icon-check.svg" alt="Checked Icon" />
+        <img src="/icon-check.svg" alt="Checked Icon" />
       </div>
     <p :class="{ crossed: isComplete() }">{{ props.title }}</p>
     <img
       @click.stop="props.onRemove(key)"
       class="cross"
-      src="../assets/icon-cross.svg"
+      src="/icon-cross.svg"
       alt="Delete Todo"
     />
     </div>

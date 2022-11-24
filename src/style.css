@@ -70,10 +70,10 @@ input:focus {
     --subtitle-color-hover: var(--light-subtitle-color);
     --text-color: var(--light-text-color);
     --card-color: var(--light-card-color); 
-    --light-desktop-bg: url("../src/assets/bg-desktop-light.jpg");
-    --light-mobile-bg: url("../src/assets/BG-MOBILE-LIGHT.JPG");
-    --dark-desktop-bg: url("../src/assets/bg-desktop-dark.jpg");
-    --dark-mobile-bg: url("../src/assets/BG-MOBILE-DARK.JPG");
+    --light-desktop-bg: url("/bg-desktop-light.jpg");
+    --light-mobile-bg: url("/BG-MOBILE-LIGHT.JPG");
+    --dark-desktop-bg: url("/bg-desktop-dark.jpg");
+    --dark-mobile-bg: url("/BG-MOBILE-DARK.JPG");
     --desktop-bg: var(--light-desktop-bg);
     --mobile-bg: var(--light-mobile-bg);
 

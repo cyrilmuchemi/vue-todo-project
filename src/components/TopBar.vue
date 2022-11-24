@@ -2,12 +2,8 @@
   <div class="topbar | row">
     <h1>TODO</h1>
     <img
-      @click="toggleTheme"
-      :src="
-        isDark
-          ? '../src/assets/icon-sun.svg'
-          : '../src/assets/icon-moon.svg'
-      "
+    @click="toggleTheme"
+      :src="isDark ? '/icon-sun.svg' : '/icon-moon.svg'"
       alt="Toggle Theme"
     />
   </div>
